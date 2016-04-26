@@ -4,11 +4,20 @@
   "description": "Makes bookmarks with the name I want. My way or the highway!",
   "version": "0.0.1",
 
-  "browser_action": {
-    "default_icon": "icon.png"
+  "permissions": [
+    "activeTab",
+    "bookmarks"
+  ],
+
+  "background": {
+    "scripts": ["create_bookmark.js"],
+    "persistent": false
   },
 
-  "permissions": [
-    "activeTab"
-  ]
+  "browser_action": {
+    "name": "Click to create a bookmark for a Github PR.",
+    "default_icon": {
+      "128": "icon.png"
+    }
+  }
 }
