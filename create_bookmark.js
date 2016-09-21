@@ -4,7 +4,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
     for (i = 0; i < nodes.length; i++) {
       if (nodes[i].title == "open issues") {
-        var jiraId = tab.title.match(/NS-[0-9]+:/)[0];
+        var jiraId = tab.title.match(/(NS|SFBAU)-[0-9]+:/)[0];
         var repoName = tab.url.split("/")[4];
 
         chrome.bookmarks.create({
